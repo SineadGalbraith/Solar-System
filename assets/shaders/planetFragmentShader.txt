@@ -1,0 +1,8 @@
+#version 330
+
+in vec2 planetTexture;
+
+uniform sampler2D pTexture;
+void main(){
+	gl_FragColor = texture(pTexture, planetTexture);
+}

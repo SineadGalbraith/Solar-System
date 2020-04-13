@@ -1,0 +1,13 @@
+#version 330
+
+in vec3 diffuseLight;
+in vec2 sunTexture;
+in vec3 specular;
+
+vec3 ambientLight = vec3(0.4f, 0.4f, 0.4f);
+
+uniform sampler2D sTexture;
+
+void main(){
+	gl_FragColor = texture(sTexture, sunTexture) * (vec4(ambientLight, 1.0f) + vec4(diffuseLight, 1.0) + vec4(specular, 1.0));
+}
